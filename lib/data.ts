@@ -1,0 +1,236 @@
+export type MenuItem = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: "Specials" | "Wraps & Pitas" | "Combos" | "Salads" | "Sides" | "Desserts";
+  image: string;
+  isNew?: boolean;
+  calories: number;
+  allergens: string[];
+};
+
+export const menuItems: MenuItem[] = [
+  // ── Specials ───────────────────────────────────────────────────────────────
+  {
+    id: "1",
+    name: "Chicken Shawarma Special",
+    description: "Crispy marinated chicken, saffron rice, fresh salad, grilled tomato & onion, warm pita",
+    price: 14.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_ChickenShwarmaSpecial.jpg",
+    calories: 720,
+    allergens: ["Gluten"],
+  },
+  {
+    id: "2",
+    name: "Beef Shawarma Special",
+    description: "Slow-roasted spiced beef, saffron rice, house salad, grilled vegetables, pita bread",
+    price: 15.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_BeefShawarmaSpecial.jpg",
+    calories: 780,
+    allergens: ["Gluten"],
+  },
+  {
+    id: "3",
+    name: "Beef Kofta Special",
+    description: "Four charcoal-grilled beef kofta skewers, saffron rice, garden salad, pita",
+    price: 15.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_BeefKoftaSpecial.jpg",
+    calories: 820,
+    allergens: ["Gluten"],
+  },
+  {
+    id: "4",
+    name: "Chicken Kofta Special",
+    description: "Charcoal-grilled chicken kofta, herbed rice, salad, pickled veggies, pita",
+    price: 14.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_ChickenKoftaSpecial.jpg",
+    calories: 760,
+    allergens: ["Gluten"],
+  },
+  {
+    id: "5",
+    name: "Falafel Special",
+    description: "Crispy golden falafel, creamy hummus, stuffed grape leaves, garden salad, pita",
+    price: 13.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_FalafelSpecial.jpg",
+    calories: 650,
+    allergens: ["Gluten"],
+  },
+  {
+    id: "6",
+    name: "Cheeseburger Special",
+    description: "Halal beef patty, melted cheese, golden fries, pickled veggies, fresh tomato & lettuce",
+    price: 14.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_CheeseburgerSpecial.jpg",
+    calories: 840,
+    allergens: ["Gluten", "Dairy"],
+  },
+  {
+    id: "7",
+    name: "Chef's Special",
+    description: "Whole charcoal-grilled chicken with beef & chicken kofta, grilled peppers, onions & veggies",
+    price: 28.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_ChefsSpecial.jpg",
+    isNew: true,
+    calories: 1200,
+    allergens: [],
+  },
+  {
+    id: "8",
+    name: "Salmon Special",
+    description: "Grilled Atlantic salmon with Mediterranean rice, salad and house sauces",
+    price: 18.99,
+    category: "Specials",
+    image: "/images/CharcoalChicken_SalmonSpecial.jpg",
+    isNew: true,
+    calories: 680,
+    allergens: ["Fish"],
+  },
+  // ── Wraps & Pitas ──────────────────────────────────────────────────────────
+  {
+    id: "9",
+    name: "Beef Kofta Wrap",
+    description: "Grilled beef kofta, tahini, fresh veggies, pickles rolled in warm pita",
+    price: 11.99,
+    category: "Wraps & Pitas",
+    image: "/images/CharcoalChicken_BeefKoftaWrap.jpg",
+    calories: 520,
+    allergens: ["Gluten", "Sesame"],
+  },
+  {
+    id: "10",
+    name: "Beef Kofta in Pita",
+    description: "Open-face grilled beef kofta in sesame pita with house salad and condiments",
+    price: 11.99,
+    category: "Wraps & Pitas",
+    image: "/images/CharcoalChicken_BeefKoftaInPita.jpg",
+    calories: 480,
+    allergens: ["Gluten", "Sesame"],
+  },
+  {
+    id: "11",
+    name: "Chicken Kofta Wrap",
+    description: "Charcoal chicken kofta, garlic sauce, lettuce, tomato, pickles in pita wrap",
+    price: 10.99,
+    category: "Wraps & Pitas",
+    image: "/images/CharcoalChicken_ChickenKoftaWrap.jpg",
+    calories: 490,
+    allergens: ["Gluten"],
+  },
+  {
+    id: "12",
+    name: "Chicken Kofta Pita",
+    description: "Juicy chicken kofta in toasted sesame pita with Mediterranean sauces",
+    price: 10.99,
+    category: "Wraps & Pitas",
+    image: "/images/CharcoalChicken_ChickenKoftaPita.jpg",
+    calories: 460,
+    allergens: ["Gluten", "Sesame"],
+  },
+  // ── Combos ─────────────────────────────────────────────────────────────────
+  {
+    id: "13",
+    name: "Half Chicken Combo",
+    description: "Half charcoal-grilled chicken, saffron rice, salad, pickled veggies, pita bread",
+    price: 16.99,
+    category: "Combos",
+    image: "/images/CharcoalChicken_HalfChickenCombo.jpg",
+    isNew: true,
+    calories: 890,
+    allergens: ["Gluten"],
+  },
+  // ── Salads ─────────────────────────────────────────────────────────────────
+  {
+    id: "14",
+    name: "House Salad",
+    description: "Mixed greens, stuffed grape leaves, chickpeas, olives, corn, pickled veggies, pita",
+    price: 10.99,
+    category: "Salads",
+    image: "/images/CharcoalChicken_HouseSalad.jpg",
+    calories: 420,
+    allergens: ["Gluten"],
+  },
+  // ── Sides ──────────────────────────────────────────────────────────────────
+  {
+    id: "15",
+    name: "Hummus",
+    description: "Creamy house hummus with olive oil, warm chickpeas and a pinch of paprika",
+    price: 4.99,
+    category: "Sides",
+    image: "/images/CharcoalChicken_Hummus.jpg",
+    calories: 180,
+    allergens: ["Sesame"],
+  },
+  {
+    id: "16",
+    name: "Babaganoush",
+    description: "Smoky roasted eggplant dip with olive oil and fresh herbs",
+    price: 4.99,
+    category: "Sides",
+    image: "/images/CharcoalChicken_Babaganoush.jpg",
+    calories: 160,
+    allergens: [],
+  },
+  {
+    id: "17",
+    name: "Tahini",
+    description: "Smooth house-made sesame tahini, drizzled with premium olive oil",
+    price: 2.99,
+    category: "Sides",
+    image: "/images/CharcoalChicken_Tahini.jpg",
+    calories: 90,
+    allergens: ["Sesame"],
+  },
+  {
+    id: "18",
+    name: "Moussaka",
+    description: "Layered eggplant, spiced ground beef and béchamel, baked to golden perfection",
+    price: 6.99,
+    category: "Sides",
+    image: "/images/CharcoalChicken_Mousaka.jpg",
+    calories: 340,
+    allergens: ["Dairy", "Gluten"],
+  },
+  // ── Desserts ───────────────────────────────────────────────────────────────
+  {
+    id: "19",
+    name: "Baklava",
+    description: "Flaky phyllo pastry layered with walnuts, soaked in rose-water honey syrup",
+    price: 4.99,
+    category: "Desserts",
+    image: "/images/CharcoalChicken_Baklava.jpg",
+    calories: 380,
+    allergens: ["Gluten", "Nuts", "Dairy"],
+  },
+  {
+    id: "20",
+    name: "Rice Pudding",
+    description: "Traditional creamy rice pudding, lightly scented with rose water",
+    price: 4.49,
+    category: "Desserts",
+    image: "/images/CharcoalChicken_RicePudding.jpg",
+    calories: 290,
+    allergens: ["Dairy"],
+  },
+];
+
+export const reviews = [
+  { name: "Omar F.", rating: 5, text: "Best shawarma outside of the Middle East. The beef kofta special is absolutely incredible — charcoal flavor is unmatched.", avatar: "OF" },
+  { name: "Jessica M.", rating: 5, text: "I've tried every Mediterranean spot in the area. Charcoal Chicken is on a different level. The falafel plate alone is worth the drive.", avatar: "JM" },
+  { name: "Carlos R.", rating: 5, text: "The half chicken combo is the best thing I've eaten in years. Perfectly charred, insanely juicy. My whole family is obsessed.", avatar: "CR" },
+  { name: "Lina H.", rating: 5, text: "As someone from Lebanon, this place hits home. The hummus and babaganoush are legit. Great for catering too — we ordered for 50 people!", avatar: "LH" },
+];
+
+export const bestsellers = [
+  menuItems.find((m) => m.id === "13")!,
+  menuItems.find((m) => m.id === "1")!,
+  menuItems.find((m) => m.id === "3")!,
+];
