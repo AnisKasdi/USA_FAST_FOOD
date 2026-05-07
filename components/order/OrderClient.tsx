@@ -11,6 +11,9 @@ const DELIVERY_ZONES = ["Midtown", "Chelsea", "Flatiron", "Greenwich Village", "
 export default function OrderClient() {
   const [mode, setMode] = useState<"pickup" | "delivery">("pickup");
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [customerName, setCustomerName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const [status, setStatus] = useState<"idle" | "placed" | "preparing" | "ready">("idle");
 
   const addToCart = (item: MenuItem) => {
@@ -32,9 +35,11 @@ export default function OrderClient() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          mode,
-          items: cart.map((c) => ({ menuItemId: Number(c.id), qty: c.qty, price: c.price })),
-          total: total * 1.095,
+          type: mode,
+          customer: customerName || "Guest",
+          phone: phone || undefined,
+          address: mode === "delivery" ? address : undefined,
+          items: cart.map((c) => ({ menuItemId: c.id, quantity: c.qty, price: c.price, name: c.name })),
         }),
       });
     } catch {
@@ -237,6 +242,34 @@ export default function OrderClient() {
               <span style={{ color: "#FFB703" }}>${(total * 1.095).toFixed(2)}</span>
             </div>
 
+            <input
+              type="text"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+              placeholder="Your name"
+              className="mt-3 w-full px-4 py-3 rounded-xl text-sm outline-none"
+              style={{ background: "#2d2d2d", color: "#F5F5F5", border: "1px solid #333" }}
+            />
+            {mode === "delivery" && (
+              <>
+                <input
+                  type="text"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone number"
+                  className="w-full px-4 py-3 rounded-xl text-sm outline-none"
+                  style={{ background: "#2d2d2d", color: "#F5F5F5", border: "1px solid #333" }}
+                />
+                <input
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  placeholder="Delivery address"
+                  className="w-full px-4 py-3 rounded-xl text-sm outline-none"
+                  style={{ background: "#2d2d2d", color: "#F5F5F5", border: "1px solid #333" }}
+                />
+              </>
+            )}
             <button
               onClick={placeOrder}
               disabled={cart.length === 0}
