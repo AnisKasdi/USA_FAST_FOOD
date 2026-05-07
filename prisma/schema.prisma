@@ -47,3 +47,9 @@ model OrderItem {
   menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
   order      Order    @relation(fields: [orderId], references: [id])
 }
+
+model Config {
+  id        String   @id @default("site")
+  data      String
+  updatedAt DateTime @updatedAt
+}
